@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QWidget" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>801</width>
+     <height>601</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="1" column="0">
+     <widget class="QWidget" name="v_sideBar" native="true">
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QPushButton" name="btn_main">
+         <property name="minimumSize">
+          <size>
+           <width>120</width>
+           <height>180</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Main</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_real_time">
+         <property name="minimumSize">
+          <size>
+           <width>120</width>
+           <height>180</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Real Time</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_data">
+         <property name="minimumSize">
+          <size>
+           <width>120</width>
+           <height>180</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Data</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QStackedWidget" name="page_manage">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="page">
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <widget class="QLabel" name="lb_name">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>100</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>Consolas</family>
+            <pointsize>25</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Main</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btn_start">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>200</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>Consolas</family>
+            <pointsize>35</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	border-radius: 90;
+	background-color: rgba(0,0,0,0);
+	border: 3px solid skyblue;
+	color : skyblue;
+}
+
+QPushButton:hover{
+	background-color: skyblue;
+	border: 3px solid rgba(0,0,0,0);
+	color : white;
+}</string>
+          </property>
+          <property name="text">
+           <string>Start</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QLabel" name="p1_lb_ethName">
+            <property name="font">
+             <font>
+              <family>Consolas</family>
+              <pointsize>25</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>NO</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="p1_lb_onoff">
+            <property name="font">
+             <font>
+              <family>Consolas</family>
+              <pointsize>30</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>-----------</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="page_3"/>
+      <widget class="QWidget" name="page_2"/>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+ <slots>
+  <slot>on_click_main()</slot>
+  <slot>on_click_realtime()</slot>
+  <slot>on_click_data()</slot>
+  <slot>on_click_start()</slot>
+ </slots>
+</ui>
