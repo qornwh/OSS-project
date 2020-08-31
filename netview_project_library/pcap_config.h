@@ -25,9 +25,6 @@ public:
     void set_errbuf(char *);
     char get_errbuf();
 
-    //void set_adhandle(pcap_if_t* _adhandle);
-    //pcap_if_t* get_adhandle();
-
 public:
     char errbuf[PCAP_ERRBUF_SIZE];
 

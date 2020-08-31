@@ -1,7 +1,8 @@
-QT += core sql
+QT -= gui
+QT += sql
 
 TEMPLATE = lib
-DEFINES += NETVIEW_PROJECT_LIBRARY_LIBRARY
+DEFINES += NETVIEW_PROJECT_LIBRARY_SQL_LIBRARY
 
 CONFIG += c++11
 
@@ -17,32 +18,14 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    pcap_config.cpp \
-    pcap_data.cpp \
-    pcap_ether_header.cpp \
-    pcap_ip_header.cpp \
-    pcap_mac.cpp \
-    pcap_task.cpp \
-    pcap_work.cpp
+    netview_database.cpp
 
 HEADERS += \
-    netview_project_library_global.h \
-    pcap_config.h \
-    pcap_data.h \
-    pcap_ether_header.h \
-    pcap_ip_header.h \
-    pcap_mac.h \
-    pcap_task.h \
-    pcap_work.h
+    netview_database.h \
+    netview_project_library_sql_global.h
 
 # Default rules for deployment.
 unix {
     target.path = /usr/lib
 }
 !isEmpty(target.path): INSTALLS += target
-
-win32:LIBS += -L$$PWD/../WpdPack/Lib/x64/ -lwpcap -lPacket
-win32:LIBS += -lws2_32
-
-INCLUDEPATH += $$PWD/../WpdPack/Include
-DEPENDPATH += $$PWD/../WpdPack/Include

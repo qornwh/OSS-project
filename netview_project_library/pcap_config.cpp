@@ -12,21 +12,22 @@ pcap_config::~pcap_config()
 
 bool pcap_config::setting()
 {
+    if(alldevs.size() > 0)
+    {
+        alldevs.clear();
+    }
+
     this->i = 0;
 
     pcap_if_t* _a;
 
-    bool data = pcap_findalldevs(&_a, errbuf);
-
-    /*  */
-    if(pcap_findalldevs(&_a, errbuf) == -1)
+    if(pcap_findalldevs(&_a, errbuf) < 0)
     {
         QString _str = ("Error in pcap_findalldevs: %s\n", errbuf);
         qDebug(_str.toLatin1());
         return false;
     }
 
-    /*  */
     for(device = _a; device; device=device->next)
     {
         QString _str = ("%d. %s", ++i, this->device->name);
@@ -46,8 +47,6 @@ bool pcap_config::setting()
         qDebug("\nNo interfaces found! Make sure LiPcap is installed.\n");
         return false;
     }
-
-    /*  */
     return true;
 }
 

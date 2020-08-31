@@ -48,7 +48,42 @@ bool pcap_work::pcap_open()
     QString str2 = ("\nlistening on %s...\n", device.description);
     qDebug(str2.toLatin1());
 
-    //이제 pcap_config 객체를 제거할지 생각하자.
-
     return true;
+}
+
+void pcap_work::pcap_start()
+{
+    queue.enqueue(new pcap_task(adhandle));
+
+    QThreadPool::globalInstance()->start(queue.front());
+
+    qDebug("create work!!");
+    qDebug("size1 : %d",queue.size());
+    qDebug("size1 : %d",QThreadPool::globalInstance()->stackSize());
+}
+
+void pcap_work::pcap_stop()
+{
+    qDebug("size : %d",queue.size());
+    for(int i = 0; i< queue.size(); i++)
+    {
+        if(queue.isEmpty())
+            break;
+        queue.dequeue()->set_stopper(true);
+    }
+}
+
+pcap_t* pcap_work::get_adhandle()
+{
+    return adhandle;
+}
+
+int pcap_work::get_queue_size()
+{
+    return queue.size();
+}
+
+QQueue<pcap_task *> pcap_work::get_queue()
+{
+    return this->queue;
 }

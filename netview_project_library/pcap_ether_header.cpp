@@ -22,7 +22,7 @@ u_char* pcap_ether_header::get_ether_shost()
     return this->ether_shost;
 }
 
-u_char pcap_ether_header::get_ether_type()
+u_short pcap_ether_header::get_ether_type()
 {
     return this->ether_type;
 }

@@ -13,13 +13,13 @@ public:
 private:
     u_char ether_dhost[ETHER_ADDR_LEN];
     u_char ether_shost[ETHER_ADDR_LEN];
-    u_char ether_type;
+    u_short ether_type;
 
 public:
     void pkt_data_reader(u_char*);
     u_char* get_ether_dhost();
     u_char* get_ether_shost();
-    u_char get_ether_type();
+    u_short get_ether_type();
 };
 
 #endif // PCAP_ETHER_HEADER_H
