@@ -18,63 +18,18 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>801</width>
+     <width>802</width>
      <height>601</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">
-    <item row="1" column="0">
-     <widget class="QWidget" name="v_sideBar" native="true">
-      <layout class="QVBoxLayout" name="verticalLayout">
-       <item>
-        <widget class="QPushButton" name="btn_main">
-         <property name="minimumSize">
-          <size>
-           <width>120</width>
-           <height>180</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Main</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="btn_real_time">
-         <property name="minimumSize">
-          <size>
-           <width>120</width>
-           <height>180</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Real Time</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="btn_data">
-         <property name="minimumSize">
-          <size>
-           <width>120</width>
-           <height>180</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Data</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </item>
     <item row="1" column="1">
      <widget class="QStackedWidget" name="page_manage">
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="page">
-       <layout class="QVBoxLayout" name="verticalLayout_3">
+       <layout class="QVBoxLayout" name="page_wdg_1">
         <item>
          <widget class="QLabel" name="lb_name">
           <property name="minimumSize">
@@ -171,8 +126,103 @@ QPushButton:hover{
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="page_3"/>
-      <widget class="QWidget" name="page_2"/>
+      <widget class="QWidget" name="page_2">
+       <layout class="QVBoxLayout" name="page_wdg_2"/>
+      </widget>
+      <widget class="QWidget" name="page_3">
+       <layout class="QGridLayout" name="page_wdg_3">
+        <item row="0" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QLabel" name="label_2">
+            <property name="font">
+             <font>
+              <family>맑은 고딕</family>
+              <pointsize>13</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>이전 기록</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btn_1">
+            <property name="text">
+             <string>1일전</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btn_2">
+            <property name="text">
+             <string>2일전</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btn_3">
+            <property name="text">
+             <string>3일전</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btn_4">
+            <property name="text">
+             <string>4일전</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QWidget" name="v_sideBar" native="true">
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QPushButton" name="btn_main">
+         <property name="minimumSize">
+          <size>
+           <width>120</width>
+           <height>180</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Main</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_real_time">
+         <property name="minimumSize">
+          <size>
+           <width>120</width>
+           <height>180</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Real Time</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_data">
+         <property name="minimumSize">
+          <size>
+           <width>120</width>
+           <height>180</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Data</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </widget>
     </item>
    </layout>

@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui charts sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -33,17 +33,21 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-win32:LIBS += -L$$PWD/../WpdPack/Lib/ -lwpcap -lws2_32
+DEFINES += WPCAP
+DEFINES += HAVE_REMOTE
+
+win32: LIBS += -L$$PWD/../build-netview_project_library-Desktop_Qt_5_14_2_MSVC2017_64bit-Debug/debug/ -lnetview_project_library
+
+INCLUDEPATH += $$PWD/../netview_project_library
+DEPENDPATH += $$PWD/../netview_project_library
+
+win32:LIBS += -L$$PWD/../WpdPack/Lib/x64/ -lwpcap
 win32:LIBS += -lws2_32
 
 INCLUDEPATH += $$PWD/../WpdPack/Include
 DEPENDPATH += $$PWD/../WpdPack/Include
 
+win32: LIBS += -L$$PWD/../build-netview_project_library_sql-Desktop_Qt_5_14_2_MSVC2017_64bit-Debug/debug/ -lnetview_project_library_sql
 
-DEFINES += WPCAP
-DEFINES += HAVE_REMOTE
-
-win32: LIBS += -L$$PWD/../build-netview_project_library-Desktop_Qt_5_14_2_MSVC2017_32bit-Debug/debug/ -lnetview_project_library
-
-INCLUDEPATH += $$PWD/../netview_project_library
-DEPENDPATH += $$PWD/../netview_project_library
+INCLUDEPATH += $$PWD/../netview_project_library_sql
+DEPENDPATH += $$PWD/../netview_project_library_sql

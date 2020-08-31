@@ -14,6 +14,8 @@ SubWindow1::SubWindow1(std::vector<pcap_if_t> list_pcap_device ,QWidget *parent)
 {
     ui->setupUi(this);
 
+    ui->tableWidget->model()->removeRows(0, ui->tableWidget->rowCount());
+
     int index = list_pcap_device.size();
     qDebug("index size %d\n", index);
 
@@ -28,6 +30,7 @@ SubWindow1::SubWindow1(std::vector<pcap_if_t> list_pcap_device ,QWidget *parent)
         ui->tableWidget->setItem(i, 1, new QTableWidgetItem(std2));
     }
 
+    clone_pcaps.clear();
     clone_pcaps = list_pcap_device;
 }
 
@@ -46,34 +49,16 @@ SubWindow1::~SubWindow1()
 
 void SubWindow1::closeEvent(QCloseEvent *event)
 {
-    emit cansle_singal(false);
-    ui->tableWidget->setRowCount(0);
-
-    int index = clone_pcaps.size();
-
-    for(int i=0; i<index; i++)
-    {
-        clone_pcaps.pop_back();
-    }
-    this->close();
 }
 
 void SubWindow1::on_sub_btn_cle_clicked()
 {
     emit cansle_singal(false);
-    int index = clone_pcaps.size();
-    ui->tableWidget->setRowCount(0);
-
-    for(int i=0; i<index; i++)
-    {
-        clone_pcaps.pop_back();
-    }
     this->close();
 }
 
 void SubWindow1::on_sub_btn_ok_clicked()
 {
-    emit pcap_singal(clone_pcaps[ui->tableWidget->currentRow()]);
-
     this->close();
+    emit pcap_singal(clone_pcaps[ui->tableWidget->currentRow()]);
 }
