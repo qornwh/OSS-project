@@ -44,8 +44,7 @@ void MainWindow::init()
     timer = new QTimer();
     timer->setInterval(5000);
     connect(timer, SIGNAL(timeout()), this, SLOT(view_chart()));
-    //timer->start();
-    QThreadPool::globalInstance()->start((QRunnable*)timer);
+    timer->start();
 }
 
 
@@ -256,6 +255,7 @@ void MainWindow::view_chart()
     chart->removeAllSeries();
     chart->addSeries(pie);
     pie->setLabelsVisible();
+    qDebug("update!!");
 }
 
 void MainWindow::closeEvent(QCloseEvent *event)
