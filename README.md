@@ -8,10 +8,10 @@ QT     5.14.2
 C++
 sqlite 3.23.1
 ## 폴더
-netview_project_1  			: main qt application
-netview_project_library 	: winpcap이용한 class파일
-netview_project_library_sql : qtsql, sqlite를 이용한 class파일
-build-netview_project_1-Desktop_Qt_5_14_2_MSVC2017_64bit-Release : 컴파일된 release폴더의 netview_project_1.exe으로 실행
+netview_project_1  			: main qt application<tr>
+netview_project_library 	: winpcap이용한 class파일<tr>
+netview_project_library_sql : qtsql, sqlite를 이용한 class파일<tr>
+build-netview_project_1-Desktop_Qt_5_14_2_MSVC2017_64bit-Release.zip 릴리즈 : 컴파일된 release폴더의 netview_project_1.exe으로 실행<tr>
 ## 화면 1
 ![캡처](https://user-images.githubusercontent.com/46042936/91717931-6d222a00-ebcd-11ea-9334-79d405067b24.JPG)
 ![캡처4](https://user-images.githubusercontent.com/46042936/91717937-6e535700-ebcd-11ea-92dd-fed1488cb02c.JPG)
